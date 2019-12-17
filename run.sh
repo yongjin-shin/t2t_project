@@ -20,10 +20,13 @@
 #
 
 CUDA_VISIBLE_DEVICES=0 fairseq-train \
-    ../../Desktop/data/iwslt14.tokenized.de-en \
-    --arch transformer_dpp_iwslt_de_en --share-decoder-input-output-embed \
-    --optimizer adam --adam-betas '(0.9, 0.98)' --clip-norm 0.0 \
-    --lr 5e-4 --lr-scheduler inverse_sqrt --warmup-updates 4000 \
-    --dropout 0.3 --weight-decay 0.0001 \
-    --criterion label_smoothed_cross_entropy_dpp --label-smoothing 0.1 \
-    --max-tokens 4096
+    data/iwslt14.tokenized.de-en \
+    --arch=transformer_dpp_iwslt_de_en --share-decoder-input-output-embed \
+    --optimizer=adam --adam-betas=[0.9,0.98] --clip-norm=0.0 \
+    --lr=5e-4 --lr-scheduler=inverse_sqrt --warmup-updates=4000 \
+    --dropout=0.3 --weight-decay=0.0001 --criterion=label_smoothed_cross_entropy_dpp \
+    --max-tokens=4096 --save-dir=checkpoints \
+    --restore-file=checkpoints/checkpoint_best.pt \
+    --keep-last-epochs=10 \
+    --max-epoch=300 \
+
