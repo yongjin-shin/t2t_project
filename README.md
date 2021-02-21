@@ -1,1 +1,6 @@
 Transformer DPP w/fairseq
+
+Title: Diverse Multi-Head Attention with Determinantal Point Processes
+
+Abstract: Transformer network, introduced by the paper: Attention is All You Need, improved the state-of-the-art performances of Natural Language Processing task like machine translation. Transformer Network uses self-attention mechanism for each layer of its encoders and decoders. When using self-attention mechanism, transformer network also utilizes new mechanism which is the “multi-headed” attention. This not only enhances the model’s ability to attend to different positions of the sentence, but also gives multiple representation subspaces for the attention layers. Here, diversity is an important aspect for multi-headed attention since each attention heads should focus on diverse positions of the sentence in order to fully capture the meaning of the sentence. Here, we will utilize Determinantal Point Processes (DPP), a probabilistic model defined on item sets that is used to select sets of items that are balanced in both quality and diversity. Using DPP, we will be able to enforce attention heads to be both diverse and qualitatively appropriate. We will test this DPP-based Transformer Network on translation tasks using conventional dataset, or possibly real-world datasets.
+
